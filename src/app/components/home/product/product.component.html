@@ -1,0 +1,47 @@
+<app-deliverform
+  *ngIf="showDeliverForm"
+  (closeForm)="onCloseDeliverForm()"
+></app-deliverform>
+<div class="product">
+  <div class="order-title">
+    <span>Produtos</span>
+    <i class="fa-regular fa-trash-can" (click)="clearOrderList()"></i>
+  </div>
+  <hr />
+  <div class="deliver-list-container-empty" *ngIf="orderList.length == 0">
+    <i class="fa-solid fa-book"></i>
+    <p>Não há itens na bolsa.</p>
+  </div>
+  <div class="deliver-list-container" *ngIf="orderList.length > 0">
+    <app-orderlist
+      [orderList]="orderList"
+      (orderListChange)="calculateTotalPrice()"
+      (removeOrder)="removeOrderList($event)"
+    >
+    </app-orderlist>
+  </div>
+  <div class="subtotal-container">
+    <hr />
+    <div>
+      <span>Subtotal</span>
+      <span>R$ {{ totalPrice | number : "1.2-2" }}</span>
+    </div>
+    <div>
+      <span>Imposto</span>
+      <span>R$ {{ totalPrice / 100 | number : "1.2-2" }}</span>
+    </div>
+    <div>
+      <span>Taxa de serviço</span>
+      <span>R$ {{ serviceFee | number : "1.2-2" }}</span>
+    </div>
+  </div>
+
+  <div class="total-price">
+    <hr />
+    <div>
+      <span>Preço total</span>
+      <span>R$ {{ serviceFee + totalPrice * 1.01 | number : "1.2-2" }}</span>
+    </div>
+    <button (click)="onOrderClick()">Pedido</button>
+  </div>
+</div>

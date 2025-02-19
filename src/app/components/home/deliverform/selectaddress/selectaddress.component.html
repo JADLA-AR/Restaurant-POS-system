@@ -1,0 +1,62 @@
+<div class="selectaddress">
+  <div class="selectaddress-content">
+    <div class="selectaddress-header">
+      <p>Cadastrar Cliente</p>
+      <i (click)="onCloseAddress()">&times;</i>
+    </div>
+    <hr />
+    <!-- select map -->
+    <div class="selectaddress-container">
+      <label for="address" class="selectaddress-label">*Address</label>
+      <select class="selectaddress-input">
+        <option>
+          Av paulista - Avenida Paulista - Bela Vista, São Paulo, State of São
+          Paulo
+        </option>
+      </select>
+      <div class="selectaddress-two-label-container">
+        <div class="selectaddress-two-label">
+          <label for="number" class="selectaddress-label">Número</label>
+          <input
+            type="text"
+            id="number"
+            class="selectaddress-input"
+            placeholder="556"
+          />
+        </div>
+        <div class="selectaddress-two-label">
+          <label for="complement" class="selectaddress-label"
+            >Apartamento/Bloco/Casa</label
+          >
+          <input
+            type="text"
+            id="complement"
+            class="selectaddress-input"
+            placeholder="Complemento"
+          />
+        </div>
+      </div>
+
+      <div class="selectaddress-label">Map</div>
+      <div class="selectaddress-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.743928899163!2d-46.65322148496328!3d-23.561732567601627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8df1fd8af%3A0x55f488de141e7e!2sAv.%20Paulista%2C%20556%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-000%2C%20Brazil!5e0!3m2!1sen!2sus!4v1618393655034!5m2!1sen!2sus"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+    <hr />
+    <div class="selectaddress-text-actions">
+      <button class="selectaddress-text-button selectaddress-text-save">
+        Salvar
+      </button>
+      <button
+        class="selectaddress-text-button selectaddress-text-cancel"
+        (click)="onCloseAddress()"
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>

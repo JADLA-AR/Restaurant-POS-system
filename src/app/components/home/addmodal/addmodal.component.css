@@ -1,0 +1,431 @@
+.addmodal {
+  font-family: sans-serif;
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.addmodal-content-1 {
+  background-color: white;
+  width: 60%;
+  height: 80%;
+  margin: auto;
+  padding: 40px;
+  border-radius: 10px;
+}
+.addmodal-content-1 span {
+  align-items: right;
+}
+.addmodel-close {
+  cursor: pointer;
+  font-size: 24pt;
+  text-align: right;
+}
+.addmodel-close:hover {
+  color: rgb(255, 51, 0);
+}
+.addmodal-content {
+  display: flex;
+}
+.addmodal-image {
+  flex: 2;
+}
+.addmodal-image img {
+  border-radius: 15px;
+  width: 90%;
+  height: 70%;
+  min-height: 300px;
+}
+
+.addmodal-counter {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  width: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.addmodal-counter button {
+  border: none;
+  background-color: #f0f0f0;
+  /* color: #333; */
+  font-size: 18px;
+  padding: 10px 15px;
+  cursor: pointer;
+  outline: none;
+  font-size: 15pt;
+}
+
+.addmodal-counter button:hover {
+  background-color: #e0e0e0;
+}
+
+.addmodal-counter label {
+  width: 50px;
+  text-align: center;
+  border: none;
+  font-size: 18px;
+  background-color: #fff;
+  outline: none;
+  font-size: 15pt;
+}
+
+.addmodal-text {
+  flex: 4;
+}
+.addmodal-text span {
+  font-size: 22pt;
+  font-weight: bold;
+}
+.addmodal-text p {
+  font-size: 15pt;
+  color: gray;
+}
+.addmodal-size {
+  display: flex;
+  margin-bottom: 10px;
+}
+.addmodal-size p {
+  font-size: 18pt;
+  font-weight: bold;
+  color: black;
+  margin: 0px;
+  padding-top: 10px;
+  padding-right: 36px;
+}
+.addmodal-size-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.addmodal-size-container label {
+  flex: 0 0 30%;
+  font-size: 14pt;
+  cursor: pointer;
+  padding: 10px;
+}
+.addmodal-size-label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.addmodal-size-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.addmodal-size-checkmark {
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.addmodal-size-label:hover input ~ .addmodal-size-checkmark {
+  background-color: #ccc;
+}
+
+.addmodal-size-label input:checked ~ .addmodal-size-checkmark {
+  background-color: #73c409;
+}
+
+.addmodal-size-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.addmodal-size-label input:checked ~ .addmodal-size-checkmark:after {
+  display: block;
+}
+
+.addmodal-size-label .addmodal-size-checkmark:after {
+  top: 7px;
+  left: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+}
+.addmodal-ficha {
+  display: flex;
+  margin-bottom: 10px;
+}
+.addmodal-ficha p {
+  font-size: 18pt;
+  font-weight: bold;
+  color: black;
+  margin: 0px;
+  padding-right: 60px;
+}
+.addmodal-ficha-check {
+  display: flex;
+  flex-wrap: wrap;
+}
+.addmodal-ficha-check label {
+  flex: 0 0 27%;
+  font-size: 14pt;
+  cursor: pointer;
+}
+.addmodal-ficha-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  color: black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.addmodal-ficha-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.addmodal-ficha-label span {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  background-color: #cacaca;
+}
+.addmodal-ficha-label:hover input ~ .addmodal-ficha-checkmark {
+  background-color: #b3b3b3;
+}
+.addmodal-ficha-label input:checked ~ .addmodal-ficha-checkmark {
+  background-color: #73c409;
+}
+.addmodal-ficha-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.addmodal-ficha-label input:checked ~ .addmodal-ficha-checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.addmodal-ficha-label .addmodal-ficha-checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.addmodal-ingredient p {
+  font-size: 18pt;
+  margin: 5px 0px;
+  font-weight: bold;
+  color: black;
+}
+.addmodal-quantity-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.addmodal-quantity {
+  display: flex;
+  width: 48%;
+  align-items: flex-start;
+  padding: 4px;
+}
+.addmodal-quantity input {
+  cursor: pointer;
+  margin: 10px;
+}
+.addmodal-quantity-set {
+  display: flex;
+}
+.addmodal-quantity-set-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  color: black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.addmodal-quantity-set-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.addmodal-quantity-set-label span {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  background-color: #cacaca;
+}
+.addmodal-quantity-set-label:hover input ~ .addmodal-quantity-set-checkmark {
+  background-color: #b3b3b3;
+}
+.addmodal-quantity-set-label input:checked ~ .addmodal-quantity-set-checkmark {
+  background-color: #73c409;
+}
+.addmodal-quantity-set-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.addmodal-quantity-set-label
+  input:checked
+  ~ .addmodal-quantity-set-checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.addmodal-quantity-set-label .addmodal-quantity-set-checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.addmodal-quantity-set button {
+  background-color: rgb(236, 236, 236);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 18pt;
+  padding: 5px;
+}
+.addmodal-quantity-set button:hover {
+  background-color: rgb(214, 214, 214);
+}
+.addmodal-quantity-set input {
+  outline: none;
+}
+.addmodal-quantity-set input:focus {
+  outline: none;
+}
+
+.addmodal-quantity-counter {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.addmodal-quantity-counter button {
+  border: none;
+  background-color: #f0f0f0;
+  font-size: 18px;
+  padding: 10px 15px;
+  cursor: pointer;
+  outline: none;
+  font-size: 15pt;
+}
+
+.addmodal-quantity-counter button:hover {
+  background-color: #e0e0e0;
+}
+
+.addmodal-quantity-counter label {
+  width: 30px;
+  text-align: center;
+  border: none;
+  font-size: 18px;
+  background-color: #fff;
+  outline: none;
+  padding: 5px 0;
+  font-size: 15pt;
+}
+
+.addmodal-vassabi {
+  font-size: 12pt;
+  margin: 5px;
+}
+.addmodal-submit {
+  display: flex;
+  justify-content: space-between;
+}
+.addmodal-submit-btn {
+  cursor: pointer;
+  background-color: #89e70a;
+  border: none;
+  border-radius: 10px;
+  margin: 15px;
+  font-size: 18pt;
+  width: 200px;
+  height: 50px;
+}
+.addmodal-submit-btn:hover {
+  background-color: #73c409;
+}
+.addmodal-submit-text {
+  margin: 10px;
+  width: 100%;
+}
+.addmodal-submit-text textarea {
+  align-items: center;
+  width: 60%;
+  height: 80px;
+  margin-left: 33%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13pt;
+  resize: none;
+  background-color: rgb(236, 236, 236);
+}
+.addmodal-submit-text textarea:focus {
+  outline: none;
+}
+.addmodal-submit-price span {
+  font-size: 18pt;
+  font-weight: bold;
+}
+.addmodal-submit-price p {
+  font-size: 32pt;
+  font-weight: bold;
+  margin: 0px;
+}

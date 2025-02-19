@@ -1,0 +1,12 @@
+body {
+  height: 100%;
+  margin: 0px;
+  font-family: sans-serif;
+}
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+/* background-color: #89e70a; */
+/* background-color: #e7e7e7; */

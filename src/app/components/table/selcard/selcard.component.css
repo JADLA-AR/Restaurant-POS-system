@@ -1,0 +1,80 @@
+.table-card {
+  border: 1px solid #49ff49;
+  border-radius: 10px;
+  background-color: white;
+  margin: 5px;
+  padding: 10px;
+}
+.table-seller {
+  font-weight: bold;
+  font-size: 16pt;
+  position: relative;
+}
+.table-seller i {
+  cursor: pointer;
+  font-size: 12pt !important;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.table-phone {
+  color: gray;
+  font-size: 10pt;
+}
+.table-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.table-date {
+  display: flex;
+  flex-direction: column;
+  font-size: 12pt;
+}
+.table-time {
+  display: flex;
+  flex-direction: column;
+  font-size: 13pt;
+}
+.table-time p {
+  margin: 0px;
+  color: gray;
+}
+.table-info span {
+  display: block;
+  margin-bottom: 5px;
+}
+.table-icon {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.table-icon img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.table-card-submit {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.table-status {
+  background-color: #007b8f;
+  color: white;
+  padding: 8px 15px;
+  font-size: 14pt;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+.table-status:hover {
+  background-color: #015663;
+}
+.table-price {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}

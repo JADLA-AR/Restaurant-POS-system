@@ -1,0 +1,68 @@
+.delivery-title-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+}
+.delivery-title-container p {
+  margin: 0px;
+  font-size: 24pt;
+}
+.delivery-title-container i {
+  padding: 5px;
+  font-size: 20pt;
+}
+.delivery-title-container i:hover {
+  cursor: pointer;
+  color: rgb(66, 65, 65);
+}
+.delivery-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-height: 780px;
+  overflow-y: auto;
+}
+.delivery-content-container::-webkit-scrollbar {
+  display: none;
+}
+.delivery-content-container div {
+  flex: 20%;
+}
+.delivery-detail-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 86px;
+  left: 82px;
+  display: flex;
+  background-color: #e7e7e7;
+  padding: 10px;
+}
+.delivery-detail-left {
+  flex: 3;
+  padding-top: 60px;
+}
+.delivery-detail-right {
+  flex: 2;
+}
+.delivery-detail-close {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+}
+.delivery-detail-close i {
+  cursor: pointer;
+  font-size: 24pt;
+  text-align: right;
+}
+.delivery-detail-close i:hover {
+  color: rgb(255, 51, 0);
+}
+.delivery-detail-right app-orderid {
+  width: 100%;
+}

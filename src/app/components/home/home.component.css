@@ -1,0 +1,105 @@
+.rightbar-container {
+  display: flex;
+  width: 100%;
+}
+.filter-thumbnail-container {
+  flex: 5;
+  margin: 5px;
+}
+.thumbnail-container {
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 780px;
+  overflow-y: auto;
+}
+.thumbnail-container::-webkit-scrollbar {
+  display: none;
+}
+.thumbnail-container app-thumbnail {
+  flex: 0 0 20%;
+  height: 340px;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+.thumbnail-container app-thumbnail:hover {
+  transform: scale(1.03);
+}
+.thumbnail-container app-thumbnail.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.thumbnail-container div {
+  font-size: 20pt;
+  margin: 10px;
+}
+.bag-product-container {
+  flex: 2;
+  margin: 5px;
+}
+.bag-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+}
+.bag-container app-bag {
+  min-width: 50px;
+  cursor: pointer;
+}
+
+.add-bag-btn {
+  font-size: 20px;
+  cursor: pointer;
+}
+.bag-container span {
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 35pt;
+  margin: 5px;
+  background-color: white;
+  border-radius: 10px;
+  width: 50px;
+  text-align: center;
+}
+.bag-container span:hover {
+  background-color: #89e70a;
+  cursor: pointer;
+}
+.bag-container span:last-child {
+  margin-left: auto;
+}
+
+@media (max-width: 1630px) {
+  .thumbnail-container app-thumbnail {
+    flex: 0 0 25%;
+  }
+}
+@media (max-width: 1380px) {
+  .thumbnail-container app-thumbnail {
+    flex: 0 0 33.333333%;
+    height: 400px;
+  }
+}
+@media (max-width: 1100px) {
+  .thumbnail-container app-thumbnail {
+    flex: 0 0 50%;
+    height: 450px;
+  }
+}
+@media (max-width: 768px) {
+  .rightbar-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .thumbnail-container app-thumbnail {
+    flex: 0 0 33.333333%;
+    height: 320px;
+  }
+}
+@media (max-width: 500px) {
+  .thumbnail-container app-thumbnail {
+    flex: 0 0 50%;
+  }
+}

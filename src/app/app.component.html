@@ -1,0 +1,27 @@
+<div class="root-container">
+  <app-navbar (searchKeyword)="onSearch($event)"></app-navbar>
+  <hr class="devider" />
+  <div class="second-container">
+    <app-leftbar class="left-bar"></app-leftbar>
+    <div class="right-bar">
+      <div *ngIf="activeTab === 'home'">
+        <app-home></app-home>
+      </div>
+      <div *ngIf="activeTab === 'delivery'">
+        <app-delivery></app-delivery>
+      </div>
+      <div *ngIf="activeTab === 'user'">
+        <app-user></app-user>
+      </div>
+      <div *ngIf="activeTab === 'table'">
+        <app-table></app-table>
+      </div>
+      <div *ngIf="activeTab === 'dollar'">
+        <app-dollar></app-dollar>
+      </div>
+      <div *ngIf="activeTab === 'cash'">
+        <app-cash></app-cash>
+      </div>
+    </div>
+  </div>
+</div>

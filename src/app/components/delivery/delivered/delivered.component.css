@@ -1,0 +1,30 @@
+.delivery-delivered-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin: 20px;
+  padding: 12px;
+}
+.delivery-delivered-title h3 {
+  font-size: 20pt;
+  margin: 5px 0px;
+  color: gray;
+}
+.delivery-delivered-title p {
+  font-size: 14pt;
+  margin: 5px 0px;
+}
+.delivery-delivered-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(0, 17, 255);
+  color: white;
+  font-weight: bold;
+}
+.delivery-delivered-lists {
+  margin: 20px;
+}

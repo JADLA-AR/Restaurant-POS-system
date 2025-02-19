@@ -1,0 +1,20 @@
+<div class="order-list-container" *ngFor="let product of orderList">
+  <p class="food-title">{{ product.title }}</p>
+  <div *ngFor="let product of orderList" class="food-extra-container">
+    <p class="food-extra" [innerHTML]="displayIngredients(product)"></p>
+  </div>
+  <div class="detail-container">
+    <div class="order-number">
+      <p>{{ product.ordernumber }}</p>
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="in-de-crease">
+      <button class="minus-btn" (click)="decrementorder(product)">-</button>
+      <button class="plus-btn" (click)="incrementorder(product)">+</button>
+    </div>
+    <span class="order-price"
+      >R$ {{ product.price * product.ordernumber | number : "1.2-2" }}
+    </span>
+  </div>
+  <hr />
+</div>

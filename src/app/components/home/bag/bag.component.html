@@ -1,0 +1,5 @@
+<div class="bag-list" [ngClass]="{ active: isActive }" (click)="selectBag()">
+  <i class="fa-solid fa-box"></i>
+  <span>Bolsa - {{ bagNumber }}</span>
+  <i class="fa-solid fa-xmark close-bag" (click)="closeBag()"></i>
+</div>

@@ -1,0 +1,36 @@
+<div class="delivery-container">
+  <div class="delivery-title-container">
+    <p>Ordem</p>
+    <i class="fa-solid fa-angle-down" (click)="onOrderDetailShow()"></i>
+  </div>
+  <div class="delivery-content-container">
+    <div class="delivery-content-pending">
+      <app-pending></app-pending>
+    </div>
+    <div class="delivery-content-confirmed">
+      <app-confirmed></app-confirmed>
+    </div>
+    <div class="delivery-content-sent">
+      <app-sent></app-sent>
+    </div>
+    <div class="delivery-content-delivered">
+      <app-delivered></app-delivered>
+    </div>
+    <div class="delivery-content-cancelled">
+      <app-cancelled></app-cancelled>
+    </div>
+  </div>
+</div>
+<div class="delivery-detail-container" *ngIf="showOrderDetail">
+  <div class="delivery-detail-left">
+    <app-orderdetail></app-orderdetail>
+    <app-composition></app-composition>
+  </div>
+  <div class="delivery-detail-right">
+    <div class="delivery-detail-close">
+      <i class="fa-solid fa-print"></i>
+      <i class="fa-regular fa-circle-xmark" (click)="onCloseOrderDetail()"></i>
+    </div>
+    <app-orderid></app-orderid>
+  </div>
+</div>

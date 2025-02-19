@@ -1,0 +1,34 @@
+<div class="rightbar-container">
+  <div class="filter-thumbnail-container">
+    <app-filtermenu class="filtermenu-container"></app-filtermenu>
+    <div class="thumbnail-container">
+      <div *ngIf="!filteredProducts.length">Não há produtos disponíveis.</div>
+      <app-thumbnail
+        *ngFor="let product of filteredProducts"
+        [product]="product"
+      >
+      </app-thumbnail>
+      <app-addmodal [selectedBagId]="getActiveBag()?.id"></app-addmodal>
+    </div>
+  </div>
+  <div class="bag-product-container">
+    <div class="bag-container">
+      <app-bag
+        *ngFor="let bag of bags; let i = index"
+        [class.active]="bag.isActive"
+        [bagNumber]="bag.id"
+        (select)="selectBag(i)"
+        (close)="removeBag(i)"
+        [isActive]="bag.isActive"
+        (click)="selectBag(bag.id)"
+      ></app-bag>
+      <span class="add-bag-btn" (click)="addBag()">+</span>
+    </div>
+    <div class="product-container">
+      <app-product
+        *ngIf="getActiveBag()"
+        [orderList]="getActiveBag()?.orderList"
+      ></app-product>
+    </div>
+  </div>
+</div>

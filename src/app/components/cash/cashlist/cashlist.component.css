@@ -1,0 +1,29 @@
+tr {
+  width: 100%;
+}
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+/* .checkbox {
+  width: 20px;
+} */
+.channel {
+  background-color: #e0e7ff;
+  color: #3759c8;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.payment {
+  background-color: #f8d7da;
+  color: #b32d35;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.options {
+  text-align: center;
+  cursor: pointer;
+}

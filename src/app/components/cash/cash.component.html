@@ -1,0 +1,156 @@
+<div class="cash-container">
+  <div class="cash-menu">
+    <div class="cash-menu-title">
+      <i class="fa-solid fa-sliders"></i>
+      <p class="cash-menu-mesa">Movimento de dinheiro</p>
+    </div>
+    <div class="cash-menu-right">
+      <div class="cash-menu-refresh">
+        <i class="fa-solid fa-arrows-rotate"></i>
+      </div>
+      <div class="cash-menu-calender">
+        <i class="fa-regular fa-calendar-check"></i>
+        <p>Start Date-</p>
+        <P>End Date</P>
+      </div>
+    </div>
+  </div>
+  <div class="cash-card">
+    <div class="cash-sent">
+      <div class="cash-sent-header">
+        <span>Total vendas</span>
+        <span style="color: green">↑ 0%</span>
+      </div>
+      <div class="cash-sent-content">
+        <div class="cash-sent-icon">↗</div>
+        <div class="cash-sent-amount">$ 0.00</div>
+      </div>
+    </div>
+
+    <div class="cash-sent">
+      <div class="cash-sent-header">
+        <span>Total Recebido</span>
+        <span style="color: green">↑ 0%</span>
+      </div>
+      <div class="cash-sent-content">
+        <div class="cash-received-icon">🛒</div>
+        <div class="cash-sent-amount">$ 0.00</div>
+      </div>
+    </div>
+
+    <div class="cash-sent">
+      <div class="cash-sent-header">
+        <span>Lucro Liquido</span>
+        <span style="color: green">↑ 0%</span>
+      </div>
+      <div class="cash-sent-content">
+        <div class="cash-profit-icon">↑↓</div>
+        <div class="cash-sent-amount">$ 0.00</div>
+      </div>
+    </div>
+  </div>
+  <div class="cash-table">
+    <table>
+      <thead>
+        <tr>
+          <th class="checkbox"><input type="checkbox" /></th>
+          <th>N°</th>
+          <th>Data/Hora</th>
+          <th>Canal</th>
+          <th>Valor</th>
+          <th>Taxas</th>
+          <th>Cupon</th>
+          <th>Pagamento</th>
+          <th>Lucro/Preju.</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <app-cashlist></app-cashlist> -->
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>807</td>
+          <td>09/02/2025 19:00:00</td>
+          <td><span class="channel">IFOOD</span></td>
+          <td>99,99</td>
+          <td>1,46</td>
+          <td>Cupon20</td>
+          <td><span class="payment">Master Debito</span></td>
+          <td>-14,89</td>
+          <td class="options">⋮</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cash-footer">
+    <div class="cash-statistics">
+      <div class="cash-statistics-header">Statistics</div>
+      <div class="cash-statistics-item">
+        <span
+          ><span class="cash-statistics-icon green">●</span>Total Vendas</span
+        >
+        <span class="gray">2.400,87</span>
+      </div>
+      <div class="cash-statistics-item">
+        <span><span class="cash-statistics-icon red">○</span>Taxas</span>
+        <span class="red">- 209,88</span>
+      </div>
+      <div class="cash-statistics-item">
+        <span
+          ><span class="icon" style="color: orange">○</span> Total Liquido</span
+        >
+        <span class="green">2.190,99</span>
+      </div>
+      <div class="cash-statistics-button-container">
+        <div class="red">Prejuízo: 43,30</div>
+        <button class="cash-statistics-button">
+          <i class="fa-solid fa-lock-open"></i>
+          Fechar Caixa
+        </button>
+      </div>
+    </div>
+
+    <div class="cash-entry">
+      <div class="cash-entry-header">
+        <div class="cash-entry-title">Todas as Entradas</div>
+        <div class="cash-entry-troco">
+          Troco: <br />
+          R$ 200,89
+        </div>
+      </div>
+      <div class="cash-entry-payment-methods">
+        <div class="cash-entry-method">
+          <p>Dinheiro</p>
+          <div class="circle" style="background-color: #add8e6">0</div>
+        </div>
+        <div class="cash-entry-method">
+          <p>Voucher</p>
+          <div class="circle" style="background-color: #fdd9a6">0</div>
+        </div>
+        <div class="cash-entry-method">
+          <p>Credito</p>
+          <div class="circle" style="background-color: #b0b0b0">0</div>
+        </div>
+        <div class="cash-entry-method">
+          <p>Debito</p>
+          <div class="circle" style="background-color: #d9f8c4">0</div>
+        </div>
+        <div class="cash-entry-method">
+          <p>Pix</p>
+          <div class="circle" style="background-color: #ff9999">0</div>
+        </div>
+        <div class="cash-entry-method">
+          <p>On Line</p>
+          <div class="circle" style="background-color: #add8e6">0</div>
+        </div>
+        <div class="cash-entry-method">
+          <p>Saque</p>
+          <div class="circle" style="background-color: #f5b7b1">0</div>
+        </div>
+      </div>
+      <div class="cash-entry-total" style="color: green">
+        ● Total Recebido &nbsp; <span style="color: black">R$: 6.129,78</span>
+      </div>
+    </div>
+  </div>
+</div>

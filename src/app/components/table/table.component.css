@@ -1,0 +1,82 @@
+.table-container {
+  display: flex;
+  margin: 10px;
+}
+.table-left {
+  flex: 6;
+  flex-direction: column;
+}
+
+.table-title-container {
+  display: flex;
+  padding: 10px;
+}
+.table-title-mesa {
+  font-size: 20pt;
+  margin: 0px 10px;
+  padding: 5px;
+}
+.table-title-container p {
+  margin: 0px;
+}
+.table-title-calender {
+  display: flex;
+  font-size: 15pt;
+  background-color: white;
+  margin: 0px 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+.table-title-calender i {
+  margin: 0px 10px;
+}
+.table-title-calender p {
+  margin: 0px;
+}
+.table-title-refresh {
+  font-size: 15pt;
+  background-color: white;
+  margin: 0px 10px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.table-filter-container {
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.table-filter-item {
+  display: flex;
+}
+.table-filter-item span {
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 16pt;
+}
+.table-filter-refresh {
+  font-size: 15pt;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.table-card-conatiner {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  height: 690px;
+  overflow-y: auto;
+}
+.table-card-conatiner::-webkit-scrollbar {
+  display: none;
+}
+.table-card-conatiner app-selcard {
+  width: 20%;
+}
+.table-right {
+  flex: 2;
+}

@@ -1,0 +1,471 @@
+.delivermodal {
+  font-family: sans-serif;
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.delivermodal-content-1 {
+  background-color: white;
+  width: 55%;
+  height: 80%;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+.delivermodal-close {
+  display: flex;
+  justify-content: space-between;
+}
+.delivermodal-close p {
+  font-size: 20pt;
+  font-weight: bold;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.delivermodal-close i {
+  font-size: 30pt;
+  cursor: pointer;
+}
+.delivermodal-close i:hover {
+  color: rgb(255, 51, 0);
+}
+
+.delivermodal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 15px 0px;
+}
+
+.delivermodal-row {
+  display: flex;
+  gap: 16px;
+  margin: 5px 0px;
+}
+
+.delivermodal-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.delivermodal-select,
+.delivermodal-input {
+  flex: 1;
+  padding: 12px;
+  font-size: 15pt;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+.delivermodal-select option {
+  cursor: pointer;
+}
+.delivermodal-select:focus,
+.delivermodal-input:focus {
+  border-color: #6de866;
+}
+
+.delivermodal-icon-button {
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  background-color: #fff;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  width: 50px;
+  transition: background-color 0.3s;
+}
+
+.delivermodal-icon-button:hover {
+  background-color: #f0f0f0;
+}
+.delivermodal-icon-button i {
+  font-size: 15pt;
+}
+.delivermodal-icon {
+  font-size: 16px;
+  color: #555;
+}
+/* deliver tab */
+.delivermodal-tab-container {
+  background-color: #fff;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.delivermodal-tab-heading {
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #000000;
+}
+
+.delivermodal-tab-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.delivermodal-tab-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  font-size: 15pt;
+  color: black;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.delivermodal-tab-option:not(:last-child) {
+  margin-right: 8px;
+}
+.delivermodal-tab-options button {
+  height: 55px;
+  color: black;
+}
+.delivermodal-tab-option:hover {
+  background-color: #4ce644;
+}
+
+.delivermodal-tab-active {
+  background-color: #57ff4f;
+  color: #fff;
+  border-color: #6de866;
+}
+
+.delivermodal-tab-icon {
+  font-size: 16px;
+}
+
+.delivermodal-tab-dropdowns {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.delivermodal-tab-select {
+  flex: 1;
+  padding: 12px;
+  font-size: 15pt;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.delivermodal-tab-select:focus {
+  border-color: #6de866;
+}
+
+.delivermodal-user-prices {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0px;
+}
+
+.delivermodal-user-price-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15pt;
+}
+
+.delivermodal-user-price-value {
+  font-weight: bold;
+  color: #333;
+}
+/* Place order */
+.delivermodal-place-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  padding: 50px 0px 10px;
+}
+
+.delivermodal-place-button {
+  background-color: #6de866;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 100px;
+  height: 55px;
+  font-size: 16pt;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.delivermodal-place-button:hover {
+  background-color: #32cd32;
+}
+
+.delivermodal-place-total {
+  text-align: left;
+}
+
+.delivermodal-place-total-label {
+  display: block;
+  font-size: 16pt;
+  color: #1f1f1f;
+}
+
+.delivermodal-place-total-value {
+  font-size: 28pt;
+  font-weight: bold;
+  color: #1f1f1f;
+}
+/* pickup tab */
+.delivermodal-content-2 {
+  background-color: white;
+  width: 55%;
+  height: 60%;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+/* confirm order */
+.confirm-background {
+  font-family: sans-serif;
+  display: none;
+  width: calc(100% - 73px);
+  height: calc(100% - 86px);
+  position: fixed;
+  z-index: 1;
+  top: 86px;
+  left: 73px;
+  display: flex;
+  background-color: #e7e7e7;
+}
+.confirm-container {
+  margin: 10px;
+  display: flex;
+  width: 100%;
+}
+.confirmorder-container {
+  flex: 1;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.confirmorder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.confirmorder-back-button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 15pt;
+  cursor: pointer;
+}
+
+.confirmorder-dine-in {
+  font-size: 15pt;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.confirmorder-order-details {
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.confirmorder-title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.confirmorder-title {
+  font-size: 24pt;
+  margin: 0 0 30px;
+}
+.confirmorder-title-container p {
+  margin: 0px;
+  margin-top: 40px;
+  cursor: pointer;
+  font-size: 14pt;
+}
+
+.confirmorder-item {
+  font-size: 22pt;
+  color: #555;
+  padding: 0px;
+  margin: 0px;
+}
+
+.confirmorder-item-value {
+  font-size: 20pt;
+  font-weight: bold;
+  padding: 10px 0px;
+  margin: 0px;
+}
+
+.confirmorder-summary,
+.confirmorder-total {
+  margin-bottom: 20px;
+}
+
+.confirmorder-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.confirmorder-label {
+  font-size: 18pt;
+  color: #555;
+}
+
+.confirmorder-value {
+  font-size: 18pt;
+  font-weight: bold;
+}
+.confirmorder-value-red {
+  font-size: 18pt;
+  font-weight: bold;
+  color: #e74200;
+}
+
+.confirmorder-actions {
+  text-align: center;
+}
+
+.confirmorder-button {
+  background-color: #5eff83;
+  width: 100%;
+  color: rgb(27, 27, 27);
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 18pt;
+}
+
+.confirmorder-button:hover {
+  background-color: #218838;
+}
+/* confirm calculator */
+.confirm-container-calc {
+  flex: 1;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.confirmcal-header {
+  margin-bottom: 20px;
+}
+
+.confirmcal-payable-label {
+  font-size: 22pt;
+  color: #555;
+  margin: 0;
+}
+
+.confirmcal-payable-amount {
+  font-size: 22pt;
+  font-weight: bold;
+  margin: 5px 0 0;
+}
+
+.confirmcal-input-container {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.confirmcal-input {
+  font-size: 22pt;
+  font-weight: bold;
+  width: 100%;
+  padding: 20px 10px;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.confirmcal-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.confirmcal-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.confirmcal-key {
+  padding: 20px 15px;
+  font-size: 22pt;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.confirmcal-key:hover {
+  background-color: #e0e0e0;
+}
+
+.confirmcal-double-zero {
+  grid-column: span 2;
+}
+
+.confirmcal-backspace {
+  font-size: 20pt;
+}
+
+.confirmcal-dot {
+  grid-column: span 1;
+}
+
+.confirmcal-ok {
+  grid-column: span 2;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.confirmcal-ok:hover {
+  background-color: #218838;
+}

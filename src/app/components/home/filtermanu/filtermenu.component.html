@@ -1,0 +1,22 @@
+<div class="filter">
+  <span class="gear">
+    <i class="fa-solid fa-sliders"></i>
+  </span>
+  <span
+    class="filtermenu-home"
+    [class.filter-menu-active]="activeFilter === 0"
+    (click)="setActiveFilterToAll()"
+    >Todos</span
+  >
+  <span
+    *ngFor="let category of categories"
+    class="filtermenu-home"
+    [class.filter-menu-active]="activeFilter === category.id"
+    (click)="setActiveFilter(category.id)"
+    >{{ category.nome }}</span
+  >
+  <div *ngIf="!categories.length" class="no-category">
+    Nenhuma categoria disponível.
+  </div>
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>

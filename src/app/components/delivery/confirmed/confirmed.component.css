@@ -1,0 +1,30 @@
+.delivery-confirmed-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin: 20px;
+  padding: 12px;
+}
+.delivery-confirmed-title h3 {
+  font-size: 20pt;
+  margin: 5px 0px;
+  color: gray;
+}
+.delivery-confirmed-title p {
+  font-size: 14pt;
+  margin: 5px 0px;
+}
+.delivery-confirmed-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(0, 255, 55);
+  color: white;
+  font-weight: bold;
+}
+.delivery-confirmed-lists {
+  margin: 20px;
+}

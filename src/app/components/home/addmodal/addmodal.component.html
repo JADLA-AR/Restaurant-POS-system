@@ -1,0 +1,120 @@
+<div class="addmodal" *ngIf="thumbnailData">
+  <div class="addmodal-content-1">
+    <div class="addmodel-close">
+      <i class="fa-regular fa-circle-xmark" (click)="closeModal()"></i>
+    </div>
+
+    <div class="addmodal-content">
+      <div class="addmodal-image">
+        <img [src]="thumbnailData.image" />
+        <div class="addmodal-counter">
+          <button class="decrement" (click)="decrementorder()">-</button>
+          <label>{{ ordernumber }}</label>
+          <button class="increment" (click)="incrementorder()">+</button>
+        </div>
+      </div>
+      <div class="addmodal-text">
+        <span>{{ thumbnailData.title }}</span>
+        <p>
+          {{ thumbnailData.description }}
+        </p>
+        <hr />
+        <div class="addmodal-size">
+          <p>Tamanho</p>
+          <div class="addmodal-size-container">
+            <label
+              *ngFor="let size of product.listaTamanhos"
+              class="addmodal-size-label"
+            >
+              <input
+                type="radio"
+                name="size"
+                [value]="size.tamanho.toLowerCase()"
+                (change)="onSizeChange($event)"
+                [checked]="
+                  size.tamanho.toLowerCase() ===
+                  product.listaTamanhos[0].tamanho.toLowerCase()
+                "
+              />
+              {{ size.tamanho }}
+              <span class="addmodal-size-checkmark"></span>
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="addmodal-ficha">
+          <p>Ficha</p>
+          <div class="addmodal-ficha-check">
+            <label
+              *ngFor="let ingrediente of product.listaIngredientes"
+              class="addmodal-ficha-label"
+            >
+              <input type="checkbox" [checked]="ingrediente.quantidade === 1" />
+              {{ ingrediente.nomeInsumo }}
+              <span class="addmodal-ficha-checkmark"></span>
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="addmodal-ingredient">
+          <p>Ingredientes Extras</p>
+          <div class="addmodal-quantity-container">
+            <div
+              class="addmodal-quantity"
+              *ngFor="let complemento of product.listaComplementos"
+            >
+              <div class="addmodal-quantity-set">
+                <label class="addmodal-quantity-set-label">
+                  <input
+                    type="checkbox"
+                    [checked]="complemento.qtd > 0"
+                    (change)="
+                      onCheckboxChange(complemento, $event.target.checked)
+                    "
+                  />
+                  <span class="addmodal-quantity-set-checkmark"></span>
+                </label>
+                <div class="addmodal-quantity-counter">
+                  <button
+                    class="decrement"
+                    (click)="decrementIngredient(complemento)"
+                    [disabled]="complemento.qtd <= 1"
+                  >
+                    -
+                  </button>
+                  <label>{{ complemento.qtd }}</label>
+                  <button
+                    class="increment"
+                    (click)="incrementingredient(complemento)"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <label class="addmodal-vassabi"
+                >{{ complemento.nome }} <br />R${{
+                  complemento.preco | number : "1.2-2"
+                }}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="addmodal-submit-text">
+      <textarea placeholder="Observações"></textarea>
+    </div>
+    <hr />
+    <div class="addmodal-submit">
+      <button class="addmodal-submit-btn" (click)="onAddClick()">
+        Adicionar
+      </button>
+
+      <div class="addmodal-submit-price">
+        <span>Preço</span>
+        <p>R${{ thumbnailData.price * this.ordernumber | number : "1.2-2" }}</p>
+      </div>
+    </div>
+  </div>
+</div>

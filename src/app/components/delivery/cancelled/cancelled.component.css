@@ -1,0 +1,30 @@
+.delivery-cancelled-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin: 20px;
+  padding: 12px;
+}
+.delivery-cancelled-title h3 {
+  font-size: 20pt;
+  margin: 5px 0px;
+  color: gray;
+}
+.delivery-cancelled-title p {
+  font-size: 14pt;
+  margin: 5px 0px;
+}
+.delivery-cancelled-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(255, 251, 0);
+  color: rgb(102, 0, 0);
+  font-weight: bold;
+}
+.delivery-cancelled-lists {
+  margin: 20px;
+}

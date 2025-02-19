@@ -1,0 +1,26 @@
+.devider {
+  background-color: #ddd;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.second-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.left-bar {
+  width: 80px;
+  border-right: 2px solid #ddd;
+}
+.right-bar {
+  flex-grow: 1;
+  background-color: #e7e7e7;
+}
+@media (max-width: 800px) {
+  .second-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+}

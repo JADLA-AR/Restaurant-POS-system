@@ -1,0 +1,29 @@
+.bag-list {
+  background-color: rgb(226, 226, 226);
+  margin: 5px;
+  padding: 15px;
+  font-size: 15pt;
+  font-family: sans-serif;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.bag-list:hover {
+  background-color: rgb(255, 255, 255);
+}
+.bag-list.active {
+  background-color: white;
+}
+.bag-list i {
+  padding-right: 5px;
+}
+.bag-list span {
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 70px;
+}
+.close-bag {
+  margin-top: 6px;
+  margin-left: 10px;
+  font-size: 8pt;
+}

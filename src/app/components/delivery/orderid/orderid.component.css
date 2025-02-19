@@ -1,0 +1,74 @@
+.order-card {
+  width: 80%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.order-card-id-container {
+  display: flex;
+  flex-direction: row;
+}
+.order-card-img {
+  font-size: 16pt;
+  background-color: rgb(182, 182, 182);
+  border: 1px black;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-card-id {
+  margin-left: 20px;
+}
+.order-header {
+  font-size: 24pt;
+  font-weight: bold;
+}
+.order-subtitle {
+  color: gray;
+  font-size: 16pt;
+}
+.order-summary {
+  margin-top: 10pt;
+}
+.order-summary div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 16pt;
+  color: rgb(77, 77, 77);
+}
+.total-price {
+  font-size: 20pt;
+  font-weight: bold;
+}
+.discount {
+  color: red;
+}
+.add-delivery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-size: 24pt;
+}
+.add-delivery button {
+  background: #3ddc84;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18pt;
+}
+.add-delivery button:hover {
+  background: #2cce75;
+}
+.order-card p {
+  font-size: 18pt;
+}

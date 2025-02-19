@@ -1,0 +1,9 @@
+<div class="delivery-pending">
+  <div class="delivery-pending-title">
+    <h3>Pedentes</h3>
+    <p class="delivery-pending-number">{{ deliveryPendingCount }}</p>
+  </div>
+  <div class="delivery-pending-lists" #deliverlistContainer>
+    <app-deliverlist *ngFor="let deliver of deliverList"></app-deliverlist>
+  </div>
+</div>

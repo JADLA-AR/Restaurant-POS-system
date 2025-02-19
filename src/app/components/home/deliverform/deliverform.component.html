@@ -1,0 +1,490 @@
+<app-selectuser
+  *ngIf="showSelectUser"
+  (closeUser)="onCloseSelectUser()"
+  (save)="handleNewCustomer($event)"
+></app-selectuser>
+<app-selectaddress
+  *ngIf="showSelectAddress"
+  (closeAddress)="onCloseSelectAddress()"
+></app-selectaddress>
+<!-- delivery tab -->
+<div class="delivermodal" *ngIf="activeTab === 'delivery'">
+  <div class="delivermodal-content-1">
+    <div class="delivermodal-close">
+      <p>Ordem</p>
+      <i (click)="onCloseDeliver()">&times;</i>
+    </div>
+
+    <div class="delivermodal-container">
+      <div class="delivermodal-row">
+        <div class="delivermodal-item">
+          <select
+            class="delivermodal-select"
+            (click)="onCustomerSelectBoxClick()"
+            (change)="onCustomerSelect($event.target.value)"
+            [(ngModel)]="selectedCustomerId"
+          >
+            <option *ngIf="!hasSelectedCustomer" value="" disabled selected>
+              Selecionar usuário
+            </option>
+            <option *ngFor="let customer of customers" [value]="customer.id">
+              {{ customer.nome }}
+            </option>
+          </select>
+          <button
+            class="delivermodal-icon-button"
+            (click)="onSelectUserClick()"
+          >
+            <i class="fa-solid fa-user-plus"></i>
+          </button>
+        </div>
+        <div class="delivermodal-item">
+          <select
+            class="delivermodal-select"
+            (click)="onAddressSelectBoxClick()"
+            [disabled]="selectedCustomerId"
+          >
+            <option *ngIf="addresses.length === 0" disabled selected>
+              Selecione o endereço
+            </option>
+            <option *ngFor="let address of addresses" [value]="address.id">
+              {{ address.tipo }} - {{ address.rua }}, {{ address.numero }},
+              {{ address.bairro }}, {{ address.cidade }}, {{ address.uf }} -
+              {{ address.cep }}
+            </option>
+          </select>
+          <button
+            class="delivermodal-icon-button"
+            (click)="onSelectAddressClick()"
+          >
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="delivermodal-row">
+        <div class="delivermodal-item">
+          <input
+            type="text"
+            placeholder="Promo code"
+            class="delivermodal-input"
+            [(ngModel)]="promoCodeInput"
+          />
+          <button class="delivermodal-icon-button" (click)="addPromoCode()">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="delivermodal-item">
+          <select
+            class="delivermodal-select"
+            (click)="onPaymentSelectBoxClick()"
+          >
+            <option value="" disabled selected *ngIf="!hasSelectedPayment">
+              Forma de Pagamento
+            </option>
+            <option *ngFor="let method of paymentMethods" [value]="method.id">
+              {{ method.formaPagamento }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- deliver tab -->
+    <div class="delivermodal-tab-container">
+      <h2 class="delivermodal-tab-heading">Informações de envio</h2>
+      <div class="delivermodal-tab-options">
+        <button
+          class="delivermodal-tab-option delivermodal-tab-active"
+          [class.delivermodal-tab-active]="activeTab === 'delivery'"
+          (click)="activeTab = 'delivery'"
+        >
+          <i class="fa-solid fa-truck"></i>
+          Entrega
+        </button>
+        <button
+          class="delivermodal-tab-option"
+          [class.delivermodal-tab-active]="activeTab === 'pickup'"
+          (click)="activeTab = 'pickup'"
+        >
+          <i class="fa-solid fa-person-walking"></i>
+          Escolher
+        </button>
+        <button
+          class="delivermodal-tab-option"
+          [class.delivermodal-tab-active]="activeTab === 'dine-in'"
+          (click)="activeTab = 'dine-in'"
+        >
+          <i class="fa-solid fa-utensils"></i>
+          jantar_em
+        </button>
+      </div>
+      <div class="delivermodal-tab-dropdowns">
+        <select class="delivermodal-tab-select">
+          <option>Selecione a data de entrega</option>
+        </select>
+        <select class="delivermodal-tab-select">
+          <option>Selecione o horário de entrega</option>
+        </select>
+      </div>
+    </div>
+    <hr />
+    <!-- deliver user -->
+    <div class="delivermodal-user-container">
+      <div class="delivermodal-user-prices">
+        <div class="delivermodal-user-price-item">
+          <span>Subtotal</span>
+          <span class="delivermodal-user-price-value"
+            >R${{ subtotal | number : "1.2-2" }}</span
+          >
+        </div>
+        <div class="delivermodal-user-price-item">
+          <span>Tax</span>
+          <span class="delivermodal-user-price-value"
+            >R${{ tax | number : "1.2-2" }}</span
+          >
+        </div>
+        <div class="delivermodal-user-price-item">
+          <span>Taxa de serviço</span>
+          <span class="delivermodal-user-price-value"
+            >R${{ serviceFee | number : "1.2-2" }}</span
+          >
+        </div>
+        <div class="delivermodal-user-price-item">
+          <span>Taxa de entrega</span>
+          <span class="delivermodal-user-price-value">R$122</span>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <!-- Place order -->
+    <div class="delivermodal-place-container">
+      <button
+        class="delivermodal-place-button"
+        [class.delivermodal-tab-active]="activeTab === 'confirm'"
+        (click)="activeTab = 'confirm'"
+      >
+        Fazer pedido
+      </button>
+      <div class="delivermodal-place-total">
+        <span class="delivermodal-place-total-label">Preço total</span>
+        <span class="delivermodal-place-total-value"
+          >R$ {{ subtotal + tax + serviceFee | number : "1.2-2" }}</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- pickup tab -->
+<div class="delivermodal" *ngIf="activeTab === 'pickup'">
+  <div class="delivermodal-content-2">
+    <div class="delivermodal-close">
+      <p>Ordem</p>
+      <i (click)="onCloseDeliver()">&times;</i>
+    </div>
+
+    <div class="delivermodal-container">
+      <div class="delivermodal-row">
+        <div class="delivermodal-item">
+          <select class="delivermodal-select">
+            <option value="" disabled>Select Promo Code</option>
+            <option *ngFor="let code of promoCodes" [value]="code.code">
+              {{ code.code }}
+            </option>
+          </select>
+        </div>
+        <div class="delivermodal-item">
+          <select
+            class="delivermodal-select"
+            (click)="onPaymentSelectBoxClick()"
+          >
+            <option value="" disabled selected *ngIf="!hasSelectedPayment">
+              Forma de Pagamento
+            </option>
+            <option *ngFor="let method of paymentMethods" [value]="method.id">
+              {{ method.formaPagamento }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- deliver tab -->
+    <div class="delivermodal-tab-container">
+      <h2 class="delivermodal-tab-heading">Informações de envio</h2>
+      <div class="delivermodal-tab-options">
+        <button
+          class="delivermodal-tab-option"
+          [class.delivermodal-tab-active]="activeTab === 'delivery'"
+          (click)="activeTab = 'delivery'"
+        >
+          <i class="fa-solid fa-truck"></i>
+          Entrega
+        </button>
+        <button
+          class="delivermodal-tab-option delivermodal-tab-active"
+          [class.delivermodal-tab-active]="activeTab === 'pickup'"
+          (click)="activeTab = 'pickup'"
+        >
+          <i class="fa-solid fa-person-walking"></i>
+          Escolher
+        </button>
+        <button
+          class="delivermodal-tab-option"
+          [class.delivermodal-tab-active]="activeTab === 'dine-in'"
+          (click)="activeTab = 'dine-in'"
+        >
+          <i class="fa-solid fa-utensils"></i>
+          jantar_em
+        </button>
+      </div>
+    </div>
+    <hr />
+    <div class="delivermodal-user-prices">
+      <div class="delivermodal-user-price-item">
+        <span>Subtotal</span>
+        <span class="delivermodal-user-price-value"
+          >R${{ subtotal | number : "1.2-2" }}</span
+        >
+      </div>
+      <div class="delivermodal-user-price-item">
+        <span>imposto</span>
+        <span class="delivermodal-user-price-value"
+          >R${{ tax | number : "1.2-2" }}</span
+        >
+      </div>
+      <div class="delivermodal-user-price-item">
+        <span>Taxa de serviço</span>
+        <span class="delivermodal-user-price-value"
+          >R${{ serviceFee | number : "1.2-2" }}</span
+        >
+      </div>
+    </div>
+    <hr />
+    <!-- Place order -->
+    <div class="delivermodal-place-container">
+      <button
+        class="delivermodal-place-button"
+        [class.delivermodal-tab-active]="activeTab === 'confirm'"
+        (click)="activeTab = 'confirm'"
+      >
+        Fazer pedido
+      </button>
+      <div class="delivermodal-place-total">
+        <span class="delivermodal-place-total-label">Preço total</span>
+        <span class="delivermodal-place-total-value"
+          >R$ {{ subtotal + tax + serviceFee | number : "1.2-2" }}</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<!-- dine in tab -->
+<div class="delivermodal" *ngIf="activeTab === 'dine-in'">
+  <div class="delivermodal-content-2">
+    <div class="delivermodal-close">
+      <p>Ordem</p>
+      <i (click)="onCloseDeliver()">&times;</i>
+    </div>
+
+    <div class="delivermodal-container">
+      <div class="delivermodal-row">
+        <div class="delivermodal-item">
+          <select class="delivermodal-select">
+            <option>Selecionar tabela</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- deliver tab -->
+    <div class="delivermodal-tab-container">
+      <h2 class="delivermodal-tab-heading">Informações de envio</h2>
+      <div class="delivermodal-tab-options">
+        <button
+          class="delivermodal-tab-option"
+          [class.delivermodal-tab-active]="activeTab === 'delivery'"
+          (click)="activeTab = 'delivery'"
+        >
+          <i class="fa-solid fa-truck"></i>
+          Entrega
+        </button>
+        <button
+          class="delivermodal-tab-option"
+          [class.delivermodal-tab-active]="activeTab === 'pickup'"
+          (click)="activeTab = 'pickup'"
+        >
+          <i class="fa-solid fa-person-walking"></i>
+          Escolher
+        </button>
+        <button
+          class="delivermodal-tab-option delivermodal-tab-active"
+          [class.delivermodal-tab-active]="activeTab === 'dine-in'"
+          (click)="activeTab = 'dine-in'"
+        >
+          <i class="fa-solid fa-utensils"></i>
+          jantar_em
+        </button>
+      </div>
+    </div>
+    <hr />
+    <div class="delivermodal-user-prices">
+      <div class="delivermodal-user-price-item">
+        <span>Subtotal</span>
+        <span class="delivermodal-user-price-value"
+          >R${{ subtotal | number : "1.2-2" }}</span
+        >
+      </div>
+      <div class="delivermodal-user-price-item">
+        <span>Imposto</span>
+        <span class="delivermodal-user-price-value"
+          >R${{ tax | number : "1.2-2" }}</span
+        >
+      </div>
+      <div class="delivermodal-user-price-item">
+        <span>Taxa de serviço</span>
+        <span class="delivermodal-user-price-value"
+          >R${{ serviceFee | number : "1.2-2" }}</span
+        >
+      </div>
+    </div>
+    <hr />
+    <!-- Place order -->
+    <div class="delivermodal-place-container">
+      <button
+        class="delivermodal-place-button"
+        [class.delivermodal-tab-active]="activeTab === 'confirm'"
+        (click)="activeTab = 'confirm'"
+      >
+        Fazer pedido
+      </button>
+      <div class="delivermodal-place-total">
+        <span class="delivermodal-place-total-label">Preço total</span>
+        <span class="delivermodal-place-total-value"
+          >R$ {{ subtotal + tax + serviceFee | number : "1.2-2" }}</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<!-- confirm form -->
+<div *ngIf="activeTab === 'confirm'" class="confirm-background">
+  <div class="confirm-container">
+    <div class="confirmorder-container">
+      <div class="confirmorder-header">
+        <button
+          class="confirmorder-back-button"
+          [class.delivermodal-tab-active]="activeTab === 'delivery'"
+          (click)="activeTab = 'delivery'"
+        >
+          &lt; Voltar
+        </button>
+        <span class="confirmorder-dine-in"
+          ><i class="fa-solid fa-rotate-right"></i
+        ></span>
+      </div>
+      <div class="confirmorder-order-details">
+        <div class="confirmorder-title-container">
+          <h2 class="confirmorder-title">Ordem</h2>
+          <p>jantar_em</p>
+        </div>
+
+        <hr />
+        <div>
+          <p class="confirmorder-item">Total do item</p>
+          <p class="confirmorder-item-value">Spaghetti Bolognese</p>
+        </div>
+        <hr />
+
+        <div class="confirmorder-summary">
+          <div class="confirmorder-row">
+            <span class="confirmorder-label">Subtotal</span>
+            <span class="confirmorder-value"
+              >R${{ subtotal | number : "1.2-2" }}</span
+            >
+          </div>
+          <div class="confirmorder-row">
+            <span class="confirmorder-label">Imposto</span>
+            <span class="confirmorder-value"
+              >R${{ tax | number : "1.2-2" }}</span
+            >
+          </div>
+          <div class="confirmorder-row">
+            <span class="confirmorder-label">Serviço</span>
+            <span class="confirmorder-value">R$ 1.00</span>
+          </div>
+          <div class="confirmorder-row">
+            <span class="confirmorder-label">Taxa de entrega</span>
+            <span class="confirmorder-value">R$ 0.00</span>
+          </div>
+          <div class="confirmorder-row">
+            <span class="confirmorder-label">Desconto</span>
+            <span class="confirmorder-value-red"
+              >-R$ {{ discount.toFixed(2) }}</span
+            >
+          </div>
+        </div>
+        <hr />
+        <div class="confirmorder-total">
+          <div class="confirmorder-row">
+            <span class="confirmorder-label">Preço total</span>
+            <span class="confirmorder-value"
+              >R$ {{ subtotal + tax + serviceFee | number : "1.2-2" }}</span
+            >
+          </div>
+          <div class="confirmorder-row">
+            <span class="confirmorder-label">Reembolso</span>
+            <span class="confirmorder-value">-R$ 9.00</span>
+          </div>
+        </div>
+
+        <div class="confirmorder-actions">
+          <button class="confirmorder-button">Confirmar pedido</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="confirm-container-calc">
+      <div class="confirmcal-header">
+        <p class="confirmcal-payable-label">Valor a pagar</p>
+        <p class="confirmcal-payable-amount">R$ 0.00</p>
+      </div>
+      <hr />
+      <div class="confirmcal-input-container">
+        <input
+          type="text"
+          class="confirmcal-input"
+          [value]="inputValue"
+          readonly
+        />
+      </div>
+
+      <div class="confirmcal-keypad">
+        <button class="confirmcal-key" (click)="appendToInput('1')">1</button>
+        <button class="confirmcal-key" (click)="appendToInput('2')">2</button>
+        <button class="confirmcal-key" (click)="appendToInput('3')">3</button>
+        <button class="confirmcal-key" (click)="appendToInput('4')">4</button>
+        <button class="confirmcal-key" (click)="appendToInput('5')">5</button>
+        <button class="confirmcal-key" (click)="appendToInput('6')">6</button>
+        <button class="confirmcal-key" (click)="appendToInput('7')">7</button>
+        <button class="confirmcal-key" (click)="appendToInput('8')">8</button>
+        <button class="confirmcal-key" (click)="appendToInput('9')">9</button>
+        <button class="confirmcal-key" (click)="appendToInput('00')">00</button>
+        <button class="confirmcal-key" (click)="appendToInput('0')">0</button>
+        <button
+          class="confirmcal-key confirmcal-backspace"
+          (click)="backspace()"
+        >
+          ⌫
+        </button>
+        <button class="confirmcal-key confirmcal-dot" (click)="appendDot()">
+          .
+        </button>
+        <button class="confirmcal-key confirmcal-ok" (click)="confirm()">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
