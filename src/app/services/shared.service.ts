@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Observable, BehaviorSubject } from "rxjs";
+import { Observable, BehaviorSubject, fromEvent } from "rxjs";
+import { debounceTime, map, startWith } from "rxjs/operators";
 import { HttpClient } from "@angular/common/http";
-import { map } from "rxjs/operators";
 
 // tumbnail data
 export interface ThumbnailData {
@@ -17,8 +17,32 @@ export interface ThumbnailData {
   providedIn: "root",
 })
 export class SharedService {
-  // API CALL SERVICE
-  constructor(private http: HttpClient) {}
+  // Mobile state management
+
+  private isMobileSubject = new BehaviorSubject<boolean>(
+    window.innerWidth < 768
+  );
+  isMobile$ = this.isMobileSubject.asObservable();
+
+  constructor(private http: HttpClient) {
+    // Listen for window resize events
+    fromEvent(window, "resize")
+      .pipe(
+        debounceTime(200), // Avoid excessive updates
+        map(() => window.innerWidth < 768),
+        startWith(window.innerWidth < 768)
+      )
+      .subscribe((isMobile) => this.isMobileSubject.next(isMobile));
+  }
+
+  get isMobile(): boolean {
+    return this.isMobileSubject.getValue();
+  }
+
+  getBanners(): Observable<any[]> {
+    const apiUrl = `/api/Promotion/GetBanners?tenantId=1`;
+    return this.http.get<any[]>(apiUrl);
+  }
 
   // private apiUrl = "";  This is base url of api
 

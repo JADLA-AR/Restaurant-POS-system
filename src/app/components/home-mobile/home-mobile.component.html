@@ -1,0 +1,57 @@
+<div class="rightbar-container">
+  <div class="filter-thumbnail-container">
+    <div class="thumbnail-container">
+      <div *ngIf="!filteredProducts.length">Não há produtos disponíveis.</div>
+      <div>
+        <app-banner></app-banner>
+      </div>
+      <div class="recently-order-title">Pedidos recentes</div>
+      <div class="recently-order-thumbnail">
+        <app-thumbnail-recent
+          *ngFor="let product of filteredProducts"
+          [product]="product"
+        >
+        </app-thumbnail-recent>
+      </div>
+      <div class="recently-order-comment">Alguma observação?</div>
+
+      <app-addmodal-mobile
+        [selectedBagId]="getActiveBag()?.id"
+      ></app-addmodal-mobile>
+    </div>
+    <app-filtermenu-mobile class="filtermenu-container"></app-filtermenu-mobile>
+    <div class="thumbnail-container-hor">
+      <div class="thumbnail-container-hor-tab">
+        <div class="thumbnail-container-hor-title">Mais populares</div>
+        <p class="thumbnail-container-hor-all">Ver tudo</p>
+      </div>
+
+      <app-thumbnail-mobile-hor
+        *ngFor="let product of filteredProducts"
+        [product]="product"
+      >
+      </app-thumbnail-mobile-hor>
+    </div>
+  </div>
+
+  <!-- <div class="bag-product-container">
+    <div class="bag-container">
+      <app-bag
+        *ngFor="let bag of bags; let i = index"
+        [class.active]="bag.isActive"
+        [bagNumber]="bag.id"
+        (select)="selectBag(i)"
+        (close)="removeBag(i)"
+        [isActive]="bag.isActive"
+        (click)="selectBag(bag.id)"
+      ></app-bag>
+      <span class="add-bag-btn" (click)="addBag()">+</span>
+    </div>
+    <div class="product-container">
+      <app-product
+        *ngIf="getActiveBag()"
+        [orderList]="getActiveBag()?.orderList"
+      ></app-product>
+    </div>
+  </div> -->
+</div>

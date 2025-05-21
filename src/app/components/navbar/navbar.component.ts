@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { SharedService } from "app/services/shared.service";
 
 @Component({
   selector: "app-navbar",
@@ -7,6 +8,13 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 })
 export class NavbarComponent {
   @Output() searchKeyword = new EventEmitter<string>();
+  isMobile: boolean = false;
+
+  constructor(private sharedService: SharedService) {
+    this.sharedService.isMobile$.subscribe((mobileStatus) => {
+      this.isMobile = mobileStatus;
+    });
+  }
 
   onSearchChange(event: Event): void {
     const input = event.target as HTMLInputElement;

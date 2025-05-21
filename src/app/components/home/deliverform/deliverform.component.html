@@ -24,7 +24,7 @@
             (change)="onCustomerSelect($event.target.value)"
             [(ngModel)]="selectedCustomerId"
           >
-            <option *ngIf="!hasSelectedCustomer" value="" disabled selected>
+            <option *ngIf="!hasSelectedCustomer" value="" disabled>
               Selecionar usuário
             </option>
             <option *ngFor="let customer of customers" [value]="customer.id">
@@ -39,12 +39,8 @@
           </button>
         </div>
         <div class="delivermodal-item">
-          <select
-            class="delivermodal-select"
-            (click)="onAddressSelectBoxClick()"
-            [disabled]="selectedCustomerId"
-          >
-            <option *ngIf="addresses.length === 0" disabled selected>
+          <select class="delivermodal-select" [disabled]="!selectedCustomerId">
+            <option *ngIf="addresses.length === 0" disabled>
               Selecione o endereço
             </option>
             <option *ngFor="let address of addresses" [value]="address.id">
@@ -53,12 +49,6 @@
               {{ address.cep }}
             </option>
           </select>
-          <button
-            class="delivermodal-icon-button"
-            (click)="onSelectAddressClick()"
-          >
-            <i class="fa-solid fa-plus"></i>
-          </button>
         </div>
       </div>
       <div class="delivermodal-row">

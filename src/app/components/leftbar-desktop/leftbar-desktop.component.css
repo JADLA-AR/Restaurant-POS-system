@@ -3,34 +3,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 0px;
+  width: 80px;
   height: calc(100vh-120px);
   background-color: #ffffff;
 }
 .openbtn {
-  font-size: 16pt;
+  font-size: 18pt;
   cursor: pointer;
   background-color: white;
   color: black;
   padding: 10px 15px;
   border: none;
-  display: block;
+  display: none;
 }
 
 .openbtn:hover {
   background-color: #a3a3a3;
 }
 .leftbar-menu {
-  font-size: 13pt;
+  font-size: 20pt;
   color: rgb(0, 0, 0);
   cursor: pointer;
   padding: 15px;
-  padding-left: 60px;
-  margin-bottom: 10px;
   text-align: center;
   display: flex;
+  display: flex;
   position: relative;
-  width: 100%;
+  margin-top: 20px;
+  width: 26px;
+  padding-left: 20px;
 }
 .leftbar-menu.leftbar-menu-active {
   background-color: #89e70a;
@@ -46,57 +47,11 @@
 }
 .leftbar-menu i {
   margin-top: 0px;
-  font-size: 12pt;
+  font-size: 18pt;
 }
 .leftbar-menu span {
   margin-left: 20px;
   font-size: 12pt;
-}
-.leftbar-menu:hover {
-  border-radius: 0px;
-  text-align: center;
-  width: 100%;
-  padding-left: 60px;
-}
-.leftbar-menu.leftbar-menu-active {
-  border-radius: 0px;
-  text-align: center;
-  width: 100%;
-  padding-left: 60px;
-}
-.leftbar-alert {
-  display: flex;
-  background-color: #f7f7f7;
-  margin: 15px;
-  font-size: 11pt;
-  position: relative;
-}
-.leftbar-alert p {
-  margin: 10px 0px;
-}
-.leftbar-alert-img {
-  flex: 1;
-  padding: 10px;
-}
-.leftbar-alert-img img {
-  width: 100%;
-  object-fit: contain;
-}
-.leftbar-alert-right {
-  flex: 5;
-  padding: 0px 10px;
-}
-.leftbar-alert-title {
-  font-weight: bold;
-}
-.leftbar-alert-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 12pt;
-}
-.leftbar-alert-confirm {
-  color: #d44300;
 }
 .right-arrow {
   position: absolute;
@@ -139,70 +94,62 @@
   border-radius: 50%;
 }
 .leftbar-logout {
-  font-size: 14pt;
+  font-size: 20pt;
   color: rgb(0, 0, 0);
   cursor: pointer;
   padding: 15px;
+  margin-top: 20px;
   text-align: center;
   width: 26px;
   display: flex;
-  padding-left: 60px;
-  width: 100%;
 }
 .leftbar-logout:hover {
   background-color: #89e70a;
   border-radius: 10px;
 }
-.leftbar-logout span {
-  margin-left: 20px;
-  font-size: 12pt;
-}
 .leftbar-container.mobile {
   position: absolute;
   z-index: 100;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 0;
   height: 100vh;
   overflow-x: hidden;
+  padding-top: 10px;
 }
 
 .leftbar-container.open {
-  width: 100vw;
+  width: 120px;
   position: fixed;
 }
 .profile {
   margin-top: 260px;
   width: 100%;
-  padding-left: 20px;
+  padding-left: 30px;
 }
 .profile img {
   width: 36px;
 }
 .profile-name {
   display: flex;
-  display: flex;
-  position: sticky;
-  bottom: 0px;
-  z-index: 3;
-  position: sticky;
-  z-index: 3;
-  top: 0px;
+  position: relative;
   width: 100%;
-  background-color: white;
   border-bottom: 2px;
 }
 .profile-name i {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 16pt;
+  top: -16px;
+  right: 0px;
+  padding: 8px;
+  text-decoration: none;
+  display: block;
+  font-size: 18pt;
   color: rgb(221, 25, 11);
 }
 .profile-name p {
   margin: auto;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 15pt;
 }
 
@@ -217,41 +164,17 @@
   font-size: 24pt;
 }
 
-.leftbar-app {
+.leftbar-logout {
+  font-size: 20pt;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+  width: 26px;
   display: flex;
-  background-color: #f7f7f7;
-  margin: 15px;
-  font-size: 11pt;
-  position: relative;
 }
-.leftbar-app p {
-  margin: 10px 0px;
-}
-.leftbar-app-img {
-  flex: 1;
-  padding: 10px;
-}
-.leftbar-app-img img {
-  width: 100%;
-  object-fit: contain;
-}
-.leftbar-app-right {
-  flex: 5;
-  padding: 10px;
-}
-.leftbar-app-title {
-  font-weight: bold;
-}
-.leftbar-app-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.leftbar-logout span {
+  margin-left: 10px;
   font-size: 12pt;
-}
-.leftbar-app-confirm {
-  background-color: #d44300;
-  color: white;
-  border-radius: 4px;
-  border: none;
-  padding: 7px;
 }

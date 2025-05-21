@@ -2,14 +2,14 @@ import { Component, ElementRef, ViewChild, HostListener } from "@angular/core";
 import { SharedService } from "../../services/shared.service";
 
 @Component({
-  selector: "app-leftbar",
-  templateUrl: "./leftbar.component.html",
-  styleUrls: ["./leftbar.component.css"],
+  selector: "app-leftbar-desktop",
+  templateUrl: "./leftbar-desktop.component.html",
+  styleUrls: ["./leftbar-desktop.component.css"],
 })
-export class LeftbarComponent {
+export class LeftbarDesktopComponent {
   constructor(private sharedService: SharedService, private eRef: ElementRef) {}
 
-  activeTab: string = "Chats";
+  activeTab: string = "Home";
 
   // Method to handle tab clicks
   onTabClick(tab: string): void {

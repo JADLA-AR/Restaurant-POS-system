@@ -1,25 +1,26 @@
 <div class="navbar">
-  <div class="logo">
+  <!-- <div *ngIf="isMobile">dd</div> -->
+  <div class="logo" *ngIf="!isMobile">
     <img src="../../../assets/img/Logo.jpg" class="logo-icon" />
     <div class="logo-text">Fy Hub Pro</div>
   </div>
 
   <div class="search-bar">
-    <i class="fas fa-search"></i>
     <input
       type="text"
       placeholder="Pesquisar produtos."
       (input)="onSearchChange($event)"
     />
+    <i class="fas fa-search"></i>
   </div>
 
-  <div class="nav-text">
+  <div class="nav-text" *ngIf="!isMobile">
     <span class="nav-text-big">17</span>
     <span class="nav-text-big">36</span>
     <p class="nav-text-small">21</p>
   </div>
 
-  <div class="notification-icon">
+  <div class="notification-icon" *ngIf="!isMobile">
     <div class="icon-help">
       <i class="fas fa-question-circle"></i>
     </div>

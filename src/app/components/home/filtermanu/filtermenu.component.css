@@ -25,3 +25,10 @@
   font-size: 15pt;
   padding: 14px;
 }
+@media only screen and (max-width: 768px) {
+  .filter span {
+    margin: 10px 0px;
+    padding: 5px 9px;
+    font-size: 13pt;
+  }
+}

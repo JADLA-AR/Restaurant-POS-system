@@ -3,11 +3,11 @@ import { Subscription } from "rxjs";
 import { SharedService } from "../../../services/shared.service";
 
 @Component({
-  selector: "app-addmodal",
-  templateUrl: "./addmodal.component.html",
-  styleUrls: ["./addmodal.component.css"],
+  selector: "app-addmodal-mobile",
+  templateUrl: "./addmodal-mobile.component.html",
+  styleUrls: ["./addmodal-mobile.component.css"],
 })
-export class AddmodalComponent implements OnInit {
+export class AddmodalMobileComponent implements OnInit {
   @Input() selectedBagId!: number;
   @Output() productAdded = new EventEmitter<void>();
   constructor(private sharedService: SharedService) {}
@@ -16,6 +16,19 @@ export class AddmodalComponent implements OnInit {
   product: any;
   selectedSizeValue: number = 0;
   productId: number = 1;
+
+  rating: number = 0;
+  stars: number[] = Array(5).fill(0);
+
+  setRating(value: number) {
+    this.rating = value;
+  }
+
+  isFavorite: boolean = false;
+
+  toggleFavorite() {
+    this.isFavorite = !this.isFavorite;
+  }
 
   ngOnInit(): void {
     this.sharedService.thumbnail$.subscribe((data) => {

@@ -1,0 +1,16 @@
+<div
+  class="thumbnail"
+  [class.out-of-stock]="product.estoqueInicial === 0"
+  (click)="product.estoqueInicial > 0 && onThumbnailClick(product)"
+>
+  <div class="thumbnail-image">
+    <img [src]="product.urlFotoProduto" />
+  </div>
+  <div class="list-container">
+    <p class="food-title-container">{{ product.nome }}</p>
+    <div class="food-price-heart">
+      <p class="food-price-container">R{{ product.precoVenda | currency }}</p>
+      <i class="fa-regular fa-heart"></i>
+    </div>
+  </div>
+</div>

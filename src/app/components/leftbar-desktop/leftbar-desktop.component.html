@@ -1,0 +1,96 @@
+<button class="openbtn" *ngIf="isMobile" (click)="toggleNav($)">☰</button>
+<div
+  id="mySidepanel"
+  class="leftbar-container"
+  [class.mobile]="isMobile"
+  [class.open]="isMenuOpen"
+  [class.desktop]="!isMobile"
+  [ngStyle]="{ top: menuPosition.top, left: menuPosition.left }"
+>
+  <div class="profile-name" *ngIf="isMobile">
+    <i
+      class="fa-solid fa-angle-left"
+      href="javascript:void(0)"
+      (click)="toggleNav()"
+    ></i>
+    <p>Leandro Almeida</p>
+    <!-- <div class="profile">
+      <img src="../../../assets/img/minion.png" />
+    </div> -->
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'Home'"
+    (click)="activeTab = 'Home'"
+    (click)="onTabClick('Home')"
+  >
+    <i class="fa-solid fa-house"></i>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'shopping'"
+    (click)="activeTab = 'shopping'"
+    (click)="onTabClick('shopping')"
+  >
+    <i class="fa-solid fa-bag-shopping"></i>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'User'"
+    (click)="activeTab = 'User'"
+    (click)="onTabClick('User')"
+  >
+    <i class="fa-regular fa-user"></i>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'table'"
+    (click)="activeTab = 'table'"
+    (click)="onTabClick('table')"
+  >
+    <i class="fa-solid fa-table"></i>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'dollar'"
+    (click)="activeTab = 'dollar'"
+    (click)="onTabClick('dollar')"
+  >
+    <i class="fa-solid fa-dollar-sign"></i>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'clock'"
+    (click)="activeTab = 'clock'"
+    (click)="onTabClick('clock')"
+  >
+    <i class="fa-regular fa-clock"></i>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+
+  <div class="profile">
+    <img src="../../../assets/img/minion.png" />
+  </div>
+
+  <div class="leftbar-logout">
+    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    <span *ngIf="isMobile">Sair</span>
+  </div>
+</div>

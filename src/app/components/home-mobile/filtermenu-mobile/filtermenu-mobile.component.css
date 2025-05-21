@@ -1,0 +1,31 @@
+.filter {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  margin: 5px;
+  border-top: 2px solid #c5c5c5;
+  border-bottom: 2px solid #c5c5c5;
+}
+.filter::-webkit-scrollbar {
+  display: none;
+}
+.filter span {
+  cursor: pointer;
+  font-family: sans-serif;
+  padding: 15px 10px;
+  font-size: 12pt;
+  font-weight: bold;
+}
+.filter span:hover {
+  color: #d44300;
+}
+.filtermenu-home.filter-menu-active {
+  color: #d44300;
+  border-bottom: 4px solid #d44300;
+}
+.no-category {
+  font-size: 15pt;
+  padding: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+}

@@ -1,62 +1,161 @@
-<div class="leftbar-container">
+<button class="openbtn" *ngIf="isMobile" (click)="toggleNav($)">☰</button>
+<div
+  id="mySidepanel"
+  class="leftbar-container"
+  [class.mobile]="isMobile"
+  [class.open]="isMenuOpen"
+  [class.desktop]="!isMobile"
+  [ngStyle]="{ top: menuPosition.top, left: menuPosition.left }"
+>
+  <div class="profile-name" *ngIf="isMobile">
+    <i
+      class="fa-solid fa-angle-left"
+      href="javascript:void(0)"
+      (click)="toggleNav()"
+    ></i>
+    <p>Leandro Almeida</p>
+    <!-- <div class="profile">
+      <img src="../../../assets/img/minion.png" />
+    </div> -->
+  </div>
+  <div class="leftbar-alert">
+    <div class="leftbar-alert-img">
+      <img src="../../../assets/img/alert.png" />
+    </div>
+    <div class="leftbar-alert-right">
+      <p class="leftbar-alert-title">Active as notification</p>
+      <p class="leftbar-alert-text">
+        Acompanhe de perto o andamento dos seus pedidos, promogöes e novidades.
+      </p>
+      <p class="leftbar-alert-confirm">Activar</p>
+    </div>
+    <div class="leftbar-alert-close">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'home'"
-    (click)="activeTab = 'home'"
-    (click)="onTabClick('home')"
+    [class.leftbar-menu-active]="activeTab === 'Chats'"
+    (click)="activeTab = 'Chats'"
+    (click)="onTabClick('Chats')"
   >
-    <i class="fa-solid fa-house"></i>
+    <i class="fa-regular fa-message"></i>
+    <span *ngIf="isMobile">Chats</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
-
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'delivery'"
-    (click)="activeTab = 'delivery'"
-    (click)="onTabClick('delivery')"
+    [class.leftbar-menu-active]="activeTab === 'Pedidos'"
+    (click)="activeTab = 'Pedidos'"
+    (click)="onTabClick('Pedidos')"
   >
-    <i class="fa-solid fa-bag-shopping"></i>
+    <i class="fa-solid fa-clipboard"></i>
+    <span *ngIf="isMobile">Pedidos</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
-
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'user'"
-    (click)="activeTab = 'user'"
-    (click)="onTabClick('user')"
+    [class.leftbar-menu-active]="activeTab === 'Cupons'"
+    (click)="activeTab = 'Cupons'"
+    (click)="onTabClick('Cupons')"
   >
-    <i class="fas fa-user"></i>
+    <i class="fa-solid fa-percent"></i>
+    <span *ngIf="isMobile">Meus Cupons</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
-
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'table'"
-    (click)="activeTab = 'table'"
-    (click)="onTabClick('table')"
+    [class.leftbar-menu-active]="activeTab === 'Favoritos'"
+    (click)="activeTab = 'Favoritos'"
+    (click)="onTabClick('Favoritos')"
   >
-    <i class="fas fa-th-large"></i>
+    <i class="fa-regular fa-heart"></i>
+    <span *ngIf="isMobile">Favoritos</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
-
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'dollar'"
-    (click)="activeTab = 'dollar'"
-    (click)="onTabClick('dollar')"
+    [class.leftbar-menu-active]="activeTab === 'Pagamento'"
+    (click)="activeTab = 'Pagamento'"
+    (click)="onTabClick('Pagamento')"
   >
-    <i class="fa-solid fa-dollar-sign"></i>
+    <i class="fa-regular fa-credit-card"></i>
+    <span *ngIf="isMobile">Pagamento</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
-
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'cash'"
-    (click)="activeTab = 'cash'"
-    (click)="onTabClick('cash')"
+    [class.leftbar-menu-active]="activeTab === 'Fidelidade'"
+    (click)="activeTab = 'Fidelidade'"
+    (click)="onTabClick('Fidelidade')"
   >
-    <i class="fa-regular fa-clock"></i>
+    <i class="fa-regular fa-star"></i>
+    <span *ngIf="isMobile">Fidelidade</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
-  <div class="profile">
-    <img src="../../../assets/img/minion.png" />
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'Ajuda'"
+    (click)="activeTab = 'Ajuda'"
+    (click)="onTabClick('Ajuda')"
+  >
+    <i class="fa-solid fa-life-ring"></i>
+    <span *ngIf="isMobile">Ajuda</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'Dados'"
+    (click)="activeTab = 'Dados'"
+    (click)="onTabClick('Dados')"
+  >
+    <i class="fa-solid fa-gear"></i>
+    <span *ngIf="isMobile">Meus Dados</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'Segurança'"
+    (click)="activeTab = 'Segurança'"
+    (click)="onTabClick('Segurança')"
+  >
+    <i class="fa-solid fa-shield"></i>
+    <span *ngIf="isMobile">Segurança</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
 
   <div class="leftbar-logout">
     <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    <span *ngIf="isMobile">Sair</span>
+  </div>
+  <div class="leftbar-app">
+    <div class="leftbar-app-img">
+      <img src="../../../assets/img/parachute.png" />
+    </div>
+    <div class="leftbar-app-right">
+      <p class="leftbar-app-title">Adicione o iFood ä tela inicial</p>
+      <p class="leftbar-app-text">
+        Aproveite a versao mais leve do App, adicionando-a a sua tela inicial
+      </p>
+      <button class="leftbar-app-confirm">Adicionar</button>
+    </div>
   </div>
 </div>

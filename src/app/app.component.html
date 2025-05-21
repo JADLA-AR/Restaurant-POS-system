@@ -1,11 +1,26 @@
 <div class="root-container">
-  <app-navbar (searchKeyword)="onSearch($event)"></app-navbar>
-  <hr class="devider" />
+  <app-navbar *ngIf="!isMobile" (searchKeyword)="onSearch($event)"></app-navbar>
+  <hr *ngIf="!isMobile" class="devider" />
   <div class="second-container">
-    <app-leftbar class="left-bar"></app-leftbar>
+    <!-- <div class="left-bar"></div> -->
+    <app-leftbar
+      *ngIf="isMobile"
+      class="left-bar"
+      [class.open]="isMobile"
+    ></app-leftbar>
+    <app-leftbar-desktop
+      *ngIf="!isMobile"
+      class="left-bar"
+      [class.open]="isMobile"
+    ></app-leftbar-desktop>
+    <div *ngIf="isMobile" class="search-bar">
+      <input type="text" placeholder="Pesquisar produtos." />
+      <i class="fas fa-search"></i>
+    </div>
     <div class="right-bar">
       <div *ngIf="activeTab === 'home'">
-        <app-home></app-home>
+        <app-home *ngIf="!isMobile"></app-home>
+        <app-home-mobile *ngIf="isMobile"></app-home-mobile>
       </div>
       <div *ngIf="activeTab === 'delivery'">
         <app-delivery></app-delivery>

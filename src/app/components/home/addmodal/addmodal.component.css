@@ -429,3 +429,56 @@
   font-weight: bold;
   margin: 0px;
 }
+@media only screen and (max-width: 1024px) {
+  .addmodel-close {
+    font-size: 18pt;
+  }
+  .addmodal-content-1 {
+    width: 70%;
+  }
+  .addmodal-image {
+    height: 40%;
+  }
+  .addmodal-image img {
+    min-height: 200px;
+  }
+  .addmodal-text span {
+    font-size: 18pt;
+  }
+  .addmodal-text p {
+    font-size: 13pt;
+    margin: 5px 0px;
+  }
+  .addmodal-size-container label {
+    font-size: 10pt;
+    flex: 0 0 27%;
+  }
+  .addmodal-ficha p {
+    padding-right: 48px;
+  }
+  .addmodal-ficha-check label {
+    font-size: 10pt;
+    flex: 0 0 22%;
+  }
+  .addmodal-quantity-counter button {
+    padding: 6px 12px;
+  }
+  .addmodal-quantity-counter label {
+    width: 20px;
+  }
+  .addmodal-quantity-set-label {
+    padding-left: 25px;
+  }
+  .addmodal-vassabi {
+    font-size: 8pt;
+  }
+  .addmodal-submit-price span {
+    font-size: 15pt;
+  }
+  .addmodal-submit-price p {
+    font-size: 20pt;
+  }
+  .addmodal-submit-btn {
+    margin: 0px;
+  }
+}

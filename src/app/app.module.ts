@@ -17,20 +17,28 @@ import { SelectuserComponent } from "./components/home/deliverform/selectuser/se
 import { SelectaddressComponent } from "./components/home/deliverform/selectaddress/selectaddress.component";
 import { ConfirmComponent } from "./components/home/deliverform/confirm/confirm.component";
 import { CashComponent } from "./components/cash/cash.component";
-import { DeliveryComponent } from './components/delivery/delivery.component';
-import { TableComponent } from './components/table/table.component';
-import { PendingComponent } from './components/delivery/pending/pending.component';
-import { ConfirmedComponent } from './components/delivery/confirmed/confirmed.component';
-import { SentComponent } from './components/delivery/sent/sent.component';
-import { CancelledComponent } from './components/delivery/cancelled/cancelled.component';
-import { DeliveredComponent } from './components/delivery/delivered/delivered.component';
-import { DeliverlistComponent } from './components/delivery/deliverlist/deliverlist.component';
-import { OrderdetailComponent } from './components/delivery/orderdetail/orderdetail.component';
-import { OrderidComponent } from './components/delivery/orderid/orderid.component';
-import { CompositionComponent } from './components/delivery/composition/composition.component';
-import { SelcardComponent } from './components/table/selcard/selcard.component';
-import { EntryComponent } from './components/cash/entry/entry.component';
-import { CashlistComponent } from './components/cash/cashlist/cashlist.component';
+import { DeliveryComponent } from "./components/delivery/delivery.component";
+import { TableComponent } from "./components/table/table.component";
+import { PendingComponent } from "./components/delivery/pending/pending.component";
+import { ConfirmedComponent } from "./components/delivery/confirmed/confirmed.component";
+import { SentComponent } from "./components/delivery/sent/sent.component";
+import { CancelledComponent } from "./components/delivery/cancelled/cancelled.component";
+import { DeliveredComponent } from "./components/delivery/delivered/delivered.component";
+import { DeliverlistComponent } from "./components/delivery/deliverlist/deliverlist.component";
+import { OrderdetailComponent } from "./components/delivery/orderdetail/orderdetail.component";
+import { OrderidComponent } from "./components/delivery/orderid/orderid.component";
+import { CompositionComponent } from "./components/delivery/composition/composition.component";
+import { SelcardComponent } from "./components/table/selcard/selcard.component";
+import { EntryComponent } from "./components/cash/entry/entry.component";
+import { CashlistComponent } from "./components/cash/cashlist/cashlist.component";
+import { HomeMobileComponent } from "./components/home-mobile/home-mobile.component";
+import { ThumbnailMobileHorComponent } from "./components/home-mobile/thumbnail-mobile-hor/thumbnail-mobile-hor.component";
+import { FiltermenuMobileComponent } from "./components/home-mobile/filtermenu-mobile/filtermenu-mobile.component";
+import { ThumbnailRecentComponent } from "./components/home-mobile/thumbnail-recent/thumbnail-recent.component";
+import { AddmodalMobileComponent } from "./components/home-mobile/addmodal-mobile/addmodal-mobile.component";
+
+import { LeftbarDesktopComponent } from "./components/leftbar-desktop/leftbar-desktop.component";
+import { BannerComponent } from './components/home-mobile/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +71,13 @@ import { CashlistComponent } from './components/cash/cashlist/cashlist.component
     SelcardComponent,
     EntryComponent,
     CashlistComponent,
+    HomeMobileComponent,
+    ThumbnailMobileHorComponent,
+    FiltermenuMobileComponent,
+    ThumbnailRecentComponent,
+    AddmodalMobileComponent,
+    LeftbarDesktopComponent,
+    BannerComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],

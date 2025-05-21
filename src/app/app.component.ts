@@ -8,10 +8,15 @@ import { SharedService } from "./services/shared.service";
 })
 export class AppComponent {
   activeTab: string = "home";
+  isMobile: boolean = false;
 
   constructor(private sharedService: SharedService) {
     this.sharedService.activeTab$.subscribe((tab) => {
       this.activeTab = tab;
+    });
+
+    this.sharedService.isMobile$.subscribe((mobileStatus) => {
+      this.isMobile = mobileStatus;
     });
   }
 

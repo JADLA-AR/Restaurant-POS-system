@@ -29,16 +29,20 @@
   flex: 4;
   padding: 20px 20px 20px 80px;
   border-left: 2px solid #ddd;
+  position: relative;
 }
 .search-bar i {
   color: #646464;
   font-size: 18pt;
+  position: absolute;
+  top: 28px;
+  left: 100px;
 }
 .search-bar input {
-  font-size: 28px;
+  font-size: 20pt;
   width: 90%;
   padding: 4px;
-  padding-left: 20px;
+  padding-left: 60px;
   border: 0px solid #ddd;
   border-radius: 4px;
   outline: none;
@@ -74,13 +78,16 @@
   align-items: center;
   justify-content: center;
 }
-
 .icon-help {
   font-size: 30px;
   color: rgb(0, 0, 0);
   cursor: pointer;
   padding: 20px 0px 20px 40px;
   flex: 1;
+}
+.fa-question-circle {
+  color: white;
+  -webkit-text-stroke: 2px black;
 }
 .icon-bell {
   position: relative;
@@ -91,6 +98,10 @@
   flex: 2;
   display: flex;
   flex-direction: row;
+}
+.fa-bell {
+  color: white;
+  -webkit-text-stroke: 2px black;
 }
 .badge {
   position: relative;
@@ -114,7 +125,10 @@
   padding: 20px 40px 20px 0px;
   flex: 1;
 }
-
+.fa-globe {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
 @media (max-width: 1630px) {
 }
 @media (max-width: 1230px) {
@@ -128,7 +142,7 @@
   .search-bar {
     order: 3;
     width: 100%;
-    min-width: 600px;
+    min-width: 500px;
   }
   .nav-text {
     border-bottom: 2px solid #ddd;
@@ -139,14 +153,18 @@
 }
 @media (max-width: 768px) {
   .search-bar {
-    order: 3;
-    width: 100%;
-    min-width: 400px;
-    display: flex;
-    margin-top: 8px;
-    padding: 10px;
+    padding: 10px 30px;
+    max-width: 70%;
+    min-width: 250px;
   }
   .search-bar i {
     padding-top: 6px;
+    top: 20px;
+    left: 70px;
+  }
+  .search-bar input {
+    background-color: rgb(235, 231, 231);
+    padding-left: 80px;
+    height: 50px;
   }
 }
